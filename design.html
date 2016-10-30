@@ -1,0 +1,422 @@
+ <!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, shrink-to-fit=no, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>SemiCode : Design</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/simple-sidebar.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="index.html">
+                       SemiCode Documentaion
+                    </a>
+                </li>
+                <li>
+                    <a href="installion.html">Installation</a>
+                </li>
+                <li>
+                    <a href="learningthebasics.html">Learning the Basics</a>
+                </li>
+                <li>
+                    <a href="packages.html">Pre-installed Packages</a>
+                </li>
+                <li>
+                    <a href="developer.html">Build Apps on SemiCode OS</a>
+                </li>
+                <li>
+                    <a href="design.html">Human Interface Guidelines</a>
+                </li>
+                <li>
+                    <a href="translation.html">Translation Guide</a>
+                </li>
+                
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 style="color:#2980b9;text-align:center;">Human Interface Guidelines</h1><br />
+                        <p>These guidelines are designed to help developers and designers create a beautifully consistent experience on the semicode desktop. They were written for interface designers, graphic artists and software developers who will be working on semicode OS. They will not only define specific design elements and principles, but will also instill a philosophy that will allow you to decide when it is appropriate to deviate from the Guidelines. Adhering to the suggestions contained here will provide many benefits:
+                        <ul>
+                        <li>Users will learn to use your application faster because it shares common elements that they are already familiar with</li>
+                            <li>Users will accomplish tasks more quickly because you will have a straight-forward interface design that isn't confusing or difficult.</li>
+                            <li>Your application will appear native to the desktop and share the same elegant look as default applications.</li>
+                            <li>Your application will be easier to document because an expected behavior does not require explanation.</li>
+                            <li>The amount of support you will have to provide, including bugs filed, will be lessened (for the reasons above).</li>
+                            
+                        </ul>
+                        <p>To help you achieve these goals, these guidelines will cover basic interface elements, how to use them and put them together effectively, and how to make your application integrate well with the desktop. The most important thing to remember is that following these guidelines will make it easier to design a new application, not harder.
+                        </p>
+                        <p>However, keep in mind that this is a guideline, not a rulebook. New, amazing interaction paradigms appear every day and more are waiting to be discovered. This is a living document that can and will be changed.</p><br />
+                        <p>For sections that have not yet been written, please refer to  <a href="http://semicode.io/ The GNOME HIG"> The GNOME HIG</a>.</p>
+                        <h1 style="color:#2980b9;text-align:center;">What Design Is Not</h1><br />
+                        <p>Before we get into all the things that make up semicode apps, there is a clarification that needs to be made. We need to understand what exactly design is about, but more importantly we want to smash two major myths:
+                        <ul>
+                        <li>Design is not something you add on after you've completed a product</li>
+                            <li>Design is not just, like, your opinion, man</li>    
+                        </ul>
+                        <p></p>
+                    <h1 style="color:#2980b9;text-align:center;">Concision</h1><br />
+                        <p>Always work to make your app instantly understandable. The main function of your app should be immediately apparent. You can do this in a number of ways, but one of the best ways is by sticking to a principal of concision.</p>
+                        <h1 style="color:#2980b9;text-align:center;">Avoid Feature Bloat</h1><br />
+                        <p>It's often very tempting to continue adding more and more features into your application. However, it is important to recognize that every new feature has a price. Specifically, every time you add a new feature:
+                        <ul>
+                        <li>Your application gets slower, consumes more resources, and takes up more disk space.</li>
+                            <li>Your application's interface becomes more cluttered and thus harder to use.</li>
+                            <li>More time is spent implementing this new feature, rather than perfecting an old feature.</li>
+                            <li>More code can often mean a greater possibility for bugs.</li>
+                            <li>More features means more work on documentation, translations, etc.</li>
+                        </ul>
+                        <p>
+                        </p>
+                        <h1 style="color:#2980b9;text-align:center;">Think in Modules</h1><br />
+                        <p>Build small, modular apps that communicate well. semicode apps avoid feature overlap and make their functions available to other apps either through Contractor or over D-Bus. This both saves you time as a developer (by other apps making their functions available to you), and is a courteous gesture towards other developers (by making your app's functions available to them).</p>
+                        <h1 style="color:#2980b9;text-align:center;">Avoid Configuration</h1><br />
+                        <p>If possible, completely avoid presenting any settings or configuration in your app. Providing settings is usually an easy way out of making design decisions about an app's behavior. But just like with problems of feature bloat, settings mean more code, more bugs, more testing, more documentation, and more complexity.</p>
+                        <h1 style="color:#2980b9;text-align:center;">Title</h1><br />
+                        <p>
+                            You should not include descriptive words in your title. For example, Dexter is called "Dexter," not "Dexter Address Book." Midori is just "Midori," not "Midori Web Browser." Instead, utilize the GenericName attribute of your app's .desktop file for a generic name, and the Comment attribute for a longer descriptive phrase.
+                        </p><br />
+                          <h1 style="color:#2980b9;text-align:center;">GenericName</h1><br />
+                        <p>
+                            If your app is easily categorized or described with a generic name, you should use that for the GenericName attribute in your app's .desktop file. If you can say, "My app is a(n) ____," then whatever fits in that blank could be the generic name. For example, Maya is a calendar, so its generic name is "Calendar."
+                        </p><br />
+                        <p>
+                            You should not include articles (the, a, an) or the words "program," "app," or "application" in your app's generic name.
+                        </p><br />
+                        <p>
+                            The generic name should be in title case and may be used around the system to better describe or categorize your app.
+                        </p><br />
+                        <h1 style="color:#2980b9;text-align:center;">Comment</h1><br />
+                        <p>The system utilizes an app's Comment attribute found in the .desktop file to succinctly inform a user what can be done with the app. It should be a short sentence or phrase beginning with a verb and containing the primary nouns that your app deals with. For example, the following are appropriate comments:
+                        <ul>
+                        <li>Maya: Browse and schedule events</li>
+                                   <li>Noise: Listen to music</li>
+                            <li>Lingo: Look up definitions</li>
+                            <li>Geary: Send and receive mail</li>
+                             <li>Scratch: Edit text files</li>
+                             <li>Files: Browse and manage your files</li>
+                        </ul>
+                        <p>
+                            An app's comment should be in sentence case, not include terminal punctuation (periods, exclamation points, or question marks), and should be as short as possible while describing the primary use case of the app.
+                        </p>
+                         <h1 style="color:#2980b9;text-align:center;">Categories</h1><br />
+                        <p>The following categories may be used to aid with searching or browsing for your app:
+                        <ul>
+                        <li>AudioVideo</li>
+                            <li>Audio</li>
+                            <li>Video</li>
+                            <li>Development</li>
+                            <li>Education</li>
+                            <li>Game</li>
+                            <li>Graphics</li>
+                            <li>Network</li>
+                            <li>Office</li>
+                            <li>Science</li>
+                            <li>Settings</li>
+                            <li>System</li>
+                            <li>Utility</li>
+                        </ul>
+                        <p>For more info, see the FreeDesktop.Org<a href="http://semicode.io/ menu entry"> menu entry</a>  spec.
+                        </p>
+                        <h1 style="color:#2980b9;text-align:center;">Keywords</h1><br />
+                        <p>You may also include keywords in your launcher to help users find your app via search. These follow the convention of "X-GNOME-Keywords" (for in the app launcher) and "X-AppInstall-Keywords" (for in the app installer). For example, web browser might include "Internet" as a keyword even though it's not in the app's name, generic name, or description. As a result, a user searching for "Internet" will find the app. Here are some more examples:
+                        <ul>
+                        <li> Geary: Email;Gmail</li>
+                            <li> Midori: Internet;WWW;Explorer</li>
+                            <li>Files: Folders;Browser;Explorer;Finder;Manager</li>
+                            <li>Terminal: Command;Prompt;cmd;Emulator</li>
+                            <li>Scratch: Notepad;IDE;Plain</li>
+                            <li>System Settings: Control;Panel</li>
+                            <li>Shotwell: Camera;Picture</li>
+                        </ul>
+                        <p>Keywords should be single words in<a href="http://semicode.io/ title case"> title case</a>  and seperated with a semicolon.
+                        </p><br />
+                        <h1 style="color:#2980b9;text-align:center;">Contractor</h1><br />
+                        <p>Contractor is a service and a protocol for exposing services easily between apps. It allows an app to interact with various other apps/services without hardcoding support for them. You simply add <a href="http://semicode.io/ contractor"> contractor</a>contractor support, and then any service registered with contractor is now available for your app to use. Your app can integrate with contractor in two different ways:
+                        <ul>
+                        <li>Register one of it's functions as a service that can be used from other apps</li>
+                            <li>Implement the contractor menu or otherwise access contractor to receive a list of services that can handle the data your app manages</li>
+                        </ul>
+                        </p><br />
+                    <h1 style="color:#2980b9;text-align:center;">Displaying Results from Contractor</h1><br />
+                    <p>The most typical way to present Contractor results to users is in menu form. Keep in mind the following things when presenting contractor results:
+                    <ul> 
+                        <li>If the item acted upon is one of many items visible, such as in an icon view, be sure to display results in a way that is directly related to the item such as in a context menu.</li>
+                        <li>If the item acted upon is the only item currently visible, such as a web page or a contact in Dexter, contractor can be displayed in a toolbar menu.</li>
+                        <li>Never display the target app's name. The menu string is the intended display name for that app. Doing so can lead to redundant messages such as, "Set image as wallpaper (wallpaper)" and it is always irrelevant to a user's needs.</li>
+                    </ul>
+                    <p>
+                    </p>
+                      <h1 style="color:#2980b9;text-align:center;">Dock Integration</h1><br />
+                    <p> By integration with Pantheon's dock, apps are able to communicate their status to the user at a glance.</p><br />
+                    
+                    <h1 style="color:#2980b9;text-align:center;">Progressbars</h1><br />
+                    <p>A progressbar must be unambiguous in it's use, referring to a single specific task. For example, a progressbar can be used to indicate the status of a file transfer or of a lengthy process like encoding. A progressbar should not be used to compound the progress of multiple types of actions.</p><br />
+                    <ul>
+                    <li>Good Example: Installation progress in Software Center</li>
+                    <li> Bad Example: Combined progress of downloading an album, burning a CD, and syncing a mobile device in Noise</li>
+                    </ul><br />
+                    <h1 style="color:#2980b9;text-align:center;">Badges</h1><br />
+                    <p>A badge shows a count of actionable items which your app manages. It's purpose is to inform the user that there are items that require user attention or action without being obtrusive. This is a passive notification. A badge should not show totals or rarely changing counters. If the badge is not easily dismissed when the user views your app, it is likely that this is not a good use of a badge.</p><br />
+                    <ul>
+                    <li> Good Example: Unread messages in Geary</li>
+                        <li>Bad Example: Total number of Photos in Shotwell</li>
+                    </ul>
+                    <br />
+                    <h1 style="color:#2980b9;text-align:center;">System Indicators</h1><br />
+                    <p>Indicators are small icons that live on the top panel. They give users a place to glance for a quick indication of various settings or events. Clicking the icon shows a small menu with related actions available to the user.</p>
+                        <img src="panel2.png.png" alt="Mountain View" ><br/>
+                    <h1 style="color:#2980b9;text-align:center;">Does Your App Need An Indicator?</h1><br />
+                    <p>The indicator area is notorious for becoming cluttered and having inconsistent behavior. Given that users will probably install many third party apps, we need to be careful about how many indicators we're showing and how they behave. Keep in mind that not every application needs an indicator. Only a very small set of apps will benefit from one. You do not need an indicator if:
+                    <ul>
+                    <li>The indicator will only appear while your app's main window is open</li>
+                        <li>You want a persistent/smaller launcher</li>
+                        <li>The application is for IM, IRC, e-mail, news-reading, or music playback. </li>
+                    </ul>
+                    <p>
+                    </p>
+                    <h1 style="color:#2980b9;text-align:center;">Container Widgets Windows</h1><br />
+                     <h1 style="color:#2980b9;text-align:center;"> Windows</h1><br />
+                    <p>Windows are the foundation that your app is built on. They provide a sort of canvas with basic actions built in such as closing an app, resizing it, etc. Although users may see all windows as being the same, there are several distinct types of windows in elementary OS. It's important to understand the types of windows available to you, window behavior in general, and behavior that is specific to a certain window type. This section will cover the different types of windows available in elementary OS. Although each type of window is a bit different, think of them all as a subclass of a window. Unless otherwise stated, they all behave as an average window.</p><br />
+                    <ul>
+                    <li>View Windows are the most literal kind of "Window" available. They show content such as presentations, web pages, documents, etc. These Windows act as a sort of frame around the specific content they display. They typically allow multiple instances of an application to be shown and may utilize tabs to help keep content organized without displaying too many windows.</li>
+                        <li>App Windows are the main windows of apps that are not document-based. These windows typically only allow one instance of an application to be shown.</li>
+                        <li>Dialogs and Alerts are temporary windows that require a response from a user. Dialogs and Alerts are especially unique types of windows with much stricter guidelines for their use and visual style. They typically belong to App or View windows and are often modal. We'll discuss what modality means in a bit.</li>
+                    </ul><br />
+                    <h1 style="color:#2980b9;text-align:center;"> Window Titles</h1><br />
+                    <p>When dealing with window titles, consider that their main use is in distinguishing one window from another. A good window title will provide a description that helps a user make a selection. Keep that in mind as you consider the following:
+                    <ul>
+                    <li>A view window should display the name of the content being viewed.  For example, in Midori the window title reflects the title of the current web page. When looking for a specific window among multiple instances of an app, simply showing the application's name is not helpful.</li>
+                        <li>A window's title should not show the vendor name or version number of the app.  Adding the version number or vendor name clutters the title and doesn't help to distinguish a window. Additionally, this information is already available from your app's About window.</li>
+                        <li>Dialogs and alerts should not display a window title. They are distinctive enough in their visual style and are often modal.</li>
+                        <li>If you need to display more than one item in the title, separate the items with an em dash (—) with space on either side. The helps keep the title clean when you need to show more information</li>
+                        <li>Don’t display pathnames in window titles, only the current destination. If you have two paths that are very similar it will be hard to distinguish them when displaying the full path. If you only show the destination, the distinction is clear.</li>
+                    </ul><p>
+                    </p><br />
+                     <h1 style="color:#2980b9;text-align:center;"> Dialogs</h1><br />
+               
+                    <h1 style="color:#2980b9;text-align:center;"> Alert Text</h1><br />
+                    <p>An alert contains both primary and secondary text.
+
+The primary text contains a brief summary of the situation and offer a suggested action. This text should use the CSS class <img src="v.PNG" alt="Mountain View" ><br/></p>
+                    <p>The secondary text provides a more detailed description of the situation and describes any possible side effects of the available actions. It's important to note that a user should only need the primary text to make a decision and should only need to refer to the secondary text for clarification. This text should be placed one text line height beneath the primary text using the default font size and weight.
+
+Make both the primary and secondary text selectable. This makes it easy for the user to copy and paste the text to another window, such as an email message.</p><br />
+                    
+                    <h1 style="color:#2980b9;text-align:center;">Button Order</h1><br />
+                    <p><img src="lm.png" alt="Mountain View" ><br/>
+                    <ul>
+                    <li>All dialogs should contain an affirmative button that performs the action suggested in the primary text. This button goes on the far right side of the window.</li>
+                        <li>For dialogs that are displayed in response to user action (such as "Quit"), provide a "Cancel" button directly to the left of the affirmative button.</li>
+                        <li>If your dialog has alternative actions, list them to the left of the "Cancel" button.</li>
+                        <li>If you wish your dialog to contain a "Help" button, this should be placed to the far left of the window.</li>
+                    </ul><p>
+                    </p>
+                     <h1 style="color:#2980b9;text-align:center;">OK" is not Okay</h1><br />
+                    <p>When presenting a dialog to a user, always use explicit action names like "Save...", "Shut Down", etc. Consider that using "OK" enables users to proceed without understand the action they are authorizing. Not all users will read the question or information presented to them in a dialog. Using specific action names will make it harder for a user to select an unintended action and may even encourage them to read the information presented before making a selection.</p><br />
+                    <h1 style="color:#2980b9;text-align:center;">Preference Dialogs</h1><br />
+                    <p>Preference dialogs should be made Transient, but not Modal. When a user makes a change in a preference dialog, the change should be immediately visible in the UI. If the dialog is modal, the user may be blocked from seeing (and especially from interacting with) the change. This means they will have to close the dialog, evaluate the change, then possibly re-open the dialog. By making the dialog transient, we keep the dialog on top for easy access, but we also allow the user to evaluate and possibly revert the change without having to close and re-open the preference dialog.</p><br />
+                     <h1 style="color:#2980b9;text-align:center;">Popovers</h1><br />
+                    <p>Popovers are like a contextual dialog. They display transient content directly related to something that was clicked on and close when clicked out of, like menus.
+                    
+                        A popover should be used when a user wants to perform a quick action without getting out of the main UI. Some examples of where a popover could be used are adding a contact from an email, adding a bookmark in a browser, or displaying downloads or file transfers.
+
+Popovers should not be used when displaying only a simple list of items; instead, use a menu. Likewise, don't use a popover if the user would spend more than a few seconds in it; instead, use a dialog. Remember that popovers are contextual and should directly relate to the UI element from which they spawn.
+                    </p><br />
+                    <h1 style="color:#2980b9;text-align:center;">Toolbars</h1><br />
+                    <p>A Toolbar is useful for providing users with quick access to an app's most used features. Besides Buttons, a Toolbar is one of the most frequently used UI elements. It may seem like a simple container, but it is important to remain consistent in it's use and organization.</p><br />
+                     <h1 style="color:#2980b9;text-align:center;">Ordering Toolbar Items</h1><br />
+                    <p>
+                        
+                        <p>
+
+Toolbar items should be organized with the most significant objects on the left and the least significant on the right, with the AppMenu always on the far right of the Toolbar. If you have many toolbar items it may be appropriate to divide them into groups with space in between each group. Keep in mind that when viewed with RTL languages, your toolbar layout will be flipped.</p>
+                     <h1 style="color:#2980b9;text-align:center;"> UI Toolkit Elements</h1><br />
+                    <p>semicode uses consistent user interface (UI) elements to bring a unified and predictable experience to users, no matter what app they're using. When used properly, this ensures a small (or nonexistent) learning curve for your app.</p><br />
+                    <h1 style="color:#2980b9;text-align:center;"> Widget Concepts</h1><br />
+                    <p>Before we get into all the widgets available in semicode OS, we need to cover some basic concepts that apply to all widgets. Employing these concepts correctly will create a more seamless experience for your users and help you avoid sifting through bug reports!</p>
+                    <h1 style="color:#2980b9;text-align:center;"> Controls That Do Nothing</h1><br />
+                    <p>A very common mistake for developers to make is creating controls that seemingly do nothing. Keep in mind that we want to present an environment where users feel comfortable exploring. A curious user will interact with a control expecting there to be some immediate reaction. When a control seemingly does nothing, this creates confusion and can be scary (Think,  "uh-oh I don't know what happened!"). In some cases, controls that do nothing are simply clutter and add unnecessary complexity to your UI.
+
+                   Consider the "clear" button present in search fields. This button only appears when it is relevant and needed. Clicking this button when the field is already clear essentially does nothing.</p>
+                     <h1 style="color:#2980b9;text-align:center;"> Sensitivity</h1><br />
+                    <p>Sometimes it doesn't make sense for a user to interact with a widget until some pre-requisite is fulfilled. For example, It doesn't make sense to allow a user to click the "Forward" button in a browser unless there is forward history available. In this case, you should make the "Forward" button insensitive or a user may click it, expecting a result, and be confused when nothing happens.
+
+                    It's usually better to make a widget insensitive than to hide it altogether. Making a widget insensitive informs the user that the functionality is available, but only after a certain condition is met. Hiding the widget gives the impression that the functionality is not available at all or can leave a user wondering why a feature has suddenly "disappeared".</p>
+                    <h1 style="color:#2980b9;text-align:center;"> Hidden Widgets</h1><br />
+                    <p>When a widget only makes sense in a certain context (not as an indicator of an action to be performed) sometimes it does make more sense to hide it. Take hardware requirements for example: It may not make sense to show multi-display options if the system only has a single display. Making multi-display options insensitive is not really a helpful hint on this system. Another exemption to this rule is a widget that a user will only look for in context, like the clear button example above. Finally, Keep in mind that insensitive items will still be recognized by screen readers and other assistive tech, while hidden widgets will not.</p>
+                    <h1 style="color:#2980b9;text-align:center;"> Spacing</h1><br />
+                    <ul>
+                    <li>Windows should have a 12px (minimum) space between any widgets and the window's border.</li>
+                        <li>Labels should be 12px (minimum) from their widgets</li>
+                        <li>If there are section headers present, labels should be indented.</li>
+                        <li>Horizontal spacing between buttons is 6px.</li>
+                    </ul><br />
+                    <h1 style="color:#2980b9;text-align:center;"> Alignment</h1><br />
+                    <ul>
+                    <li>Widgets should be "Justified" so that they align on both the left and right sides. Do not include "descriptor" widgets such as icons or labels in this justification.</li>
+                        <li>Labels should be right aligned with respect to each other when possible.</li>
+                        <li>Section headers should be left aligned with respect to each other.</li>
+                    </ul><br />
+                    <h1 style="color:#2980b9;text-align:center;"> Infobars</h1><br />
+                    <p>Infobars provide contextual information and actions to the user with varying levels of severity.</p><br />
+            
+                        <ul>It is important to determine the severity or type of infobar to use. There are four types of infobars available:
+                        <li>Information: Supplemental information and an optional action the user may perform. Shows as white in the UI.</li>
+                            <li>Question: A non-critical question for the user. An answer of some sort is expected, but it's not urgent or severe. Shows as blue in the UI.</li>
+                            <li>Warning: Lets the user know something unexpected or bad may happen and provides an action to resolve it. Displays as yellow in the UI.</li>
+                            <li>Error: Informs the user of an error that has occurred and requires a user action to resolve it. Reserved for critical situations. Displays as red in the UI.</li>
+                    </ul> <br />
+                    <h1 style="color:#2980b9;text-align:center;"> Welcome Screen</h1><br />
+                    
+                    <p>The Welcome Screen is a friendly way to help users get started with your app.</p><br />
+                    
+                    <h1 style="color:#2980b9;text-align:center;"> Usage</h1><br />
+                    <p>Typically a Welcome Screen is used for apps like Noise or Scratch where you have to import or create objects in a library before you can interact with them. This provides your users with a clear path to getting started and points out any immediate steps they must take before your app becomes useful.
+
+Make sure that if your app allows its library to be cleared that the Welcome Screen is shown again instead of an empty list</p><br />
+                    <h1 style="color:#2980b9;text-align:center;"> Labeling</h1><br />
+                    <p>The Welcome Screen consists of two sets of labels:
+                    <ul>
+                    <li>The first set explains the situation and what the Welcome Screen will help you accomplish. As an example, Noise's Welcome Screen explains that your music library is empty and that in order for the library view to become useful, we must add songs to it.</li>
+                        <li>The second set of labels consists of the actions that will assist a user in getting started with your app. To use Noise as an example again, one possible action is setting your music folder to an alternate location. First we name the action, "Set Music Folder". Then, we describe what the action does, "Find your Music folder and import its contents."</li>
+                    </ul><br />
+                    <h1 style="color:#2980b9;text-align:center;"> Iconography</h1><br />
+                    <p>Grouped with each action is an icon that helps to quickly visualize it. Most of the time these will be Action icons, but you can use Places icons when importing or setting a location and even Apps icons if you must open a configuration utility.</p>
+                    <h1 style="color:#2980b9;text-align:center;"> Source List</h1><br />
+                    <p>A source list may be used as a high-level form of navigation. Source lists are useful for showing different locations, bookmarks, or categories within your app.
+                    <img src="nautilus.png" alt="Mountain View" ><br/>
+                    </p><br />
+                    <h1 style="color:#2980b9;text-align:center;"> Sections</h1><br />
+                    <p>A source list may be separated into different collapsible sections, each with its own heading. For example, a file manager might have a section for bookmarked locations, a section for storage devices attached to the computer, and a section for network locations. These sections help group related items in the source list and allows the user to hide away sections they might not use.
+
+Avoid nesting expandable sections within a source list if possible; if you find yourself wanting to do this, you may need to rethink the sections.</p><br />
+                     <h1 style="color:#2980b9;text-align:center;"> Hierarchy</h1><br />
+                    <p>Hierarchy is important with source lists, both within the widget itself and within the broader scope of your app.
+
+Sections in the source list should be sorted from most important at the top to least important at the bottom. If you're having a hard time deciding the relative importance of each section, think about which section a user is likely to use more often. Sorting the sections this way ensures that the most important items are always visible, even if the source list is too short to fit all of the items, though of course items at the bottom will still be accessible via scrolling.
+
+A source list goes at the left side of a window (or right side for right-to-left languages). Because the user reads in this direction, the sidebar is reinforced as being before (and therefore at a higher level than) the app's contents.</p><br />
+                     <h1 style="color:#2980b9;text-align:center;"> Buttons</h1><br />
+                    <p>Buttons are an incredibly important widget to understand since your app will undoubtedly contain them. </p>
+                    <h1 style="color:#2980b9;text-align:center;"> Tool Buttons</h1><br />
+                     <img src="open.png" alt="Mountain View" ><br/>
+                    <h1 style="color:#2980b9;text-align:center;"> Labeling</h1><br />
+                    <p>Tool Buttons are almost always icon-only and do not provide a button border. They should not be accompanied by a label.</p>
+                     <h1 style="color:#2980b9;text-align:center;"> Tooltips</h1><br />
+                    <p>All Tool Buttons should have tooltips, since they do not contain a label. This assists users with disabilities as well as giving a translation for an unrecognized icon. Tooltips should be done in Sentence Case.
+
+Like text button labels, a tooltip should clearly describe what will happen when the button is pressed.</p>
+                    <h1 style="color:#2980b9;text-align:center;"> Text Buttons</h1><br />
+                    <img src="cancel.png" alt="Mountain View" ><br/>
+                    <h1 style="color:#2980b9;text-align:center;"> Labeling</h1><br />
+                    <p>Text Button labels should be done in Title Case.
+
+Like menu items, Text Button labels should consist of an Action or a Location but not a status. Make sure that a button's label clearly describes what will happen when it is pressed.
+
+"Remove Account", "Transfer to Jim's Laptop", and "Import 20 Songs" are good labels.
+
+"OK", "Get more storage!", and "Low Battery" are not good button labels. The "Get more storage!" label uses incorrect capitalization and unnecessary punctuation. With the other two labels, It's not very clear what will happen when these buttons are clicked.</p>
+                    <h1 style="color:#2980b9;text-align:center;"> Tooltips</h1><br />
+                    <p>Since Text buttons have a clear and explicit label, it's usually unnecessary to give them a tooltip</p><br />
+                    <h1 style="color:#2980b9;text-align:center;"> Linked Buttons</h1><br />
+                    <img src="ki.png" alt="Mountain View" ><br/>
+                    <h1 style="color:#2980b9;text-align:center;"> Usage</h1><br />
+                    <p>Linked Buttons are used to group actions that are either similar in nature or mutually exclusive. For example, they could group text options like Bold, Italic, and Underline. Or they can be used to group mutually exclusive states like Grid, List, or Column view.</p><br />
+                    <h1 style="color:#2980b9;text-align:center;"> AppMenu</h1><br />
+                    <p>The AppMenu is an optional menu which is opened using the gear-shaped icon on the far-right of an app's toolbar. It provides relevant menu items in place of the traditional "File, Edit, View..." menu bar.</p><br />
+                    <img src="appmenu.png" alt="Mountain View" ><br/>
+                    <h1 style="color:#2980b9;text-align:center;"> Usage</h1><br />
+                    <p>You should first consider if your app needs this widget. While most apps may have one, your app may not necessarily need an AppMenu.
+
+                     When adding items to your AppMenu, consider the following:
+                    <ul>
+                    <li>Items should be relevant and useful. It's not acceptable to duplicate items that are found in your main UI here.</li>
+                        <li>If the app includes a "preferences" window, it should be available from the AppMenu.</li>
+                        <li>There should be an item for the "About" dialog which contains links to the project's bug tracker, help, etc.</li>
+                        <li>If an AppMenu is displayed, a menu bar should not be, and vice-versa.</li>
+                    </ul>
+                    <h1 style="color:#2980b9;text-align:center;"> Search Fields</h1><br />
+                    <p>Apps that support the searching or filtering of content should include a search field on the right side of the app's toolbar (to the left of the AppMenu). This gives users a predictable place to see whether or not an app supports searching, and a consistent location from which to search. Gtk+ provides a convenient complex widget for this purpose called<a href="http://semicode.io/Gtk.SearchEntry">Gtk.SearchEntry </a> .</p>
+                     <img src="search1.png" alt="Mountain View" ><br/>
+                    <h1 style="color:#2980b9;text-align:center;"> Behavior</h1><br />
+                    <p>If it is possible to include search functionality within your app, it is best to do so. Any list or representation of multiple pieces of data should be searchable using a search field that follows these rules:
+                    <ul>
+                    <li>Results should be instantly shown as you type. This helps your app to appear faster and is more useful than having to hit "Enter" and wait. Exceptions may be made if the data is not stored locally.</li>
+                        <li>In most cases, the search should be case-insensitive; users should not be expected to provide the exact capitalization. A good compromise is "smart case" where case is respected whenever the user intentionally types lower and upper case letters.</li>
+                    </ul>
+                    <h1 style="color:#2980b9;text-align:center;"> Labeling</h1><br />
+                    <p>Search fields should contain hint text that describes what will be search. You can set this using the entry property <a href="http://semicode.io/placeholder_text">placeholder_text </a>.
+
+Most search fields should use the format "Search OBJECTS" where OBJECTS is something to be searched, like Contacts, Accounts, etc.
+
+If the search field interacts with a search service, the hint text should be the name of that service such as "Google" or "Yahoo!"</p>
+                    <h1 style="color:#2980b9;text-align:center;"> Checkboxes & Switches</h1><br />
+                    <h1 style="color:#2980b9;"> Checkboxes</h1><br />
+<p>
+Checkboxes present a way for users to select items from a list.</p>
+                    <h1 style="color:#2980b9;"> Usage</h1><br />
+                      <p>Use checkboxes when users are making a selection of items. Make sure that a user can toggle the state of the checkbox by clicking on the label associated with the checkbox.</p>
+                     <h1 style="color:#2980b9;"> Labeling</h1><br />
+                      <p>Labels associated with Checkboxes should usually be nouns or nounal phrases.</p>
+                    
+
+                        <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+
+</body>
+
+</html>
